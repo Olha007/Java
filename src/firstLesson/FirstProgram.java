@@ -1,4 +1,4 @@
-package FirstLesson;
+package firstLesson;
 
 /**
  * Клас FirstLesson.FirstProgram є початковою точкою входу у програму.
