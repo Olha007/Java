@@ -5,10 +5,9 @@ package lesson2;
  * Версія: 1.1
  * Автор: Olha
  */
-
 public class ThirdTask {
+    /** Оголошення змінних в методі різних примітивних типів з довільними значеннями */
     public static void main(String[] args) {
-        // Оголошення змінних різних примітивних типів з довільними значеннями
         byte byteVariable = 1;
         short shortVariable = 2;
         int integer = 10;
