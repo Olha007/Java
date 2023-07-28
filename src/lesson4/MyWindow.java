@@ -34,22 +34,15 @@ public class MyWindow {
     }
 
     public MyWindow() {
-        this.width = 1;
-        this.height = 5;
-        this.numberOfGlass = 3;
-        this.color = "green";
-        this.isOpen = true;
+        this(1, 5, 3, "green", true);
     }
 
     public MyWindow(double width, double height) {
-        this.width = width;
-        this.height = height;
+        this(width, height, 0, "pink", false);
     }
 
     public MyWindow(double width, double height, int numberOfGlass) {
-        this.width = width;
-        this.height = height;
-        this.numberOfGlass = numberOfGlass;
+        this(width, height, numberOfGlass, null, false);
     }
 
     public void printFields() {
