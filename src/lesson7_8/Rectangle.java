@@ -1,4 +1,4 @@
-package lesson7;
+package lesson7_8;
 
 /**
  * 1. Додайте до пакету з класом Shape клас Rectangle, який є підкласом Shape.
@@ -21,6 +21,12 @@ public class Rectangle extends Shape {
     double width;
     double length;
 
+    public Rectangle(String color, double width, double length) {
+        super(color);
+        this.width = width;
+        this.length = length;
+    }
+
     public double getWidth() {
         return width;
     }
@@ -37,12 +43,6 @@ public class Rectangle extends Shape {
         this.length = length;
     }
 
-    public Rectangle(String color, double width, double length) {
-        super(color);
-        this.width = width;
-        this.length = length;
-    }
-
     @Override
     public double calcArea() {
         return length * width;
@@ -50,6 +50,7 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "This is Rectangle, color is: " + color + "\n" + "This is wight: " + width + "\n" + "This is length: " + length;
+        return "This is Rectangle, color is: " + color + "\n" + "This is wight: "
+                + width + "\n" + "This is length: " + length;
     }
 }

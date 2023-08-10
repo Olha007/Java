@@ -1,4 +1,4 @@
-package lesson7;
+package lesson7_8;
 
 /**
  * 1. У методі main класу Main створіть масив об'єктів підкласів класу Shape: два прямокутники, два кола та два трикутники.
@@ -53,10 +53,45 @@ public class Main {
         for (Shape shape1 : shapes) {
             System.out.println(shape1.toString());
             System.out.println("Square: " + shape1.calcArea());
-            System.out.println();
             totalArea += shape1.calcArea();
             System.out.println("Total area of all shapes:: " + totalArea);
         }
+        System.out.println();
 
+        double totalCircleArea = 0.0;
+        double totalRectangleArea = 0.0;
+        double totalTriangleArea = 0.0;
+
+        // Перебір масиву фігур та вивід їх інформації та площ
+        for (Shape shape1 : shapes) {
+            System.out.println(shape1.toString());
+            System.out.println("Square: " + shape1.calcArea());
+            System.out.println();
+
+            // Варіант з використанням instanceof
+            if (shape1 instanceof Circle) {
+                totalCircleArea += shape1.calcArea();
+            } else if (shape1 instanceof Rectangle) {
+                totalRectangleArea += shape1.calcArea();
+            } else if (shape1 instanceof Triangle) {
+                totalTriangleArea += shape1.calcArea();
+            } else {
+                throw new IllegalStateException("Unexpected value: " + shape1);
+            }
+
+            // Варіант з використанням switch та патерн-матчингу
+            switch (shape1) {
+                case Circle c -> totalCircleArea += c.calcArea();
+                case Rectangle r -> totalRectangleArea += r.calcArea();
+                case Triangle t -> totalTriangleArea += t.calcArea();
+                default -> throw new IllegalStateException("Unexpected value: " + shape1);
+            }
+
+            System.out.println("Total area of circles1: " + totalCircleArea);
+            System.out.println("Total area of rectangles1: " + totalRectangleArea);
+            System.out.println("Total area of triangles1: " + totalTriangleArea);
+        }
     }
 }
+
+

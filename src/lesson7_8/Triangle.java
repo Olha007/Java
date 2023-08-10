@@ -1,4 +1,4 @@
-package lesson7;
+package lesson7_8;
 
 /**
  * 1. Додайте до пакету з класом Shape клас Triangle, який є підкласом Shape.
@@ -24,6 +24,17 @@ public class Triangle extends Shape {
     double sideB;
     double sideC;
 
+    public Triangle(String color, double sideA, double sideB, double sideC) {
+        super(color);
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+
+    private double semiPerimeter() {
+        return (sideA + sideB + sideC) / 2;
+    }
+
     public double getSideA() {
         return sideA;
     }
@@ -46,17 +57,6 @@ public class Triangle extends Shape {
 
     public void setSideC(double sideC) {
         this.sideC = sideC;
-    }
-
-    public Triangle(String color, double sideA, double sideB, double sideC) {
-        super(color);
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.sideC = sideC;
-    }
-
-    private double semiPerimeter() {
-        return (sideA + sideB + sideC) / 2;
     }
 
     @Override

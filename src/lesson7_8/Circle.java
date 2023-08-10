@@ -1,4 +1,4 @@
-package lesson7;
+package lesson7_8;
 
 /**
  * 1. Додайте до пакету з класом Shape клас Circle, який є підкласом Shape.
@@ -18,19 +18,20 @@ package lesson7;
  * Клас, який представляє геометричний коло.
  */
 public class Circle extends Shape {
-    private double radius;
+
     double pi = Math.PI;
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
 
     public double getRadius() {
         return radius;
     }
 
     public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
-    public Circle(String color, double radius) {
-        super(color);
         this.radius = radius;
     }
 
