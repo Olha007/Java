@@ -20,9 +20,9 @@ package lesson7_8;
  * Клас, який представляє геометричну фігуру трикутник.
  */
 public class Triangle extends Shape {
-    double sideA;
-    double sideB;
-    double sideC;
+   private double sideA;
+   private double sideB;
+   private double sideC;
 
     public Triangle(String color, double sideA, double sideB, double sideC) {
         super(color);

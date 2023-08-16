@@ -18,8 +18,7 @@ package lesson7_8;
  * Клас, який представляє геометричний коло.
  */
 public class Circle extends Shape {
-
-    double pi = Math.PI;
+    private double pi = Math.PI;
     private double radius;
 
     public Circle(String color, double radius) {

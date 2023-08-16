@@ -18,8 +18,8 @@ package lesson7_8;
  * Клас, який представляє прямокутник.
  */
 public class Rectangle extends Shape {
-    double width;
-    double length;
+   private double width;
+    private double length;
 
     public Rectangle(String color, double width, double length) {
         super(color);
