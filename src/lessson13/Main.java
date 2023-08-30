@@ -1,13 +1,20 @@
-package lesson9.task2_8_3_4;
+package lessson13;
 
 import java.util.Arrays;
 
 /**
- * 1. Реалізуйте абстрактним класом Shape інтерфейс Comparable так, щоб він порівнював фігури за значенням їх площ.
- * 2. Створіть ще один прямокутник з іншими розмірами та виведіть на екран результати порівняння двох прямокутників.
- * 3. Виконайте сортування фігур у масиві за зростанням значення їх площ. Виведіть на екран елементи отсортованого масиву.
- * 4. Додайте до проекту MyShapes об'єкт класу ShapeAreaDescComparator, який реалізує інтерфейс Comparator та дозволяє сортувати масив фігур за зменшенням значення їх площ.
- * 5. Відсортуйте масив з таким компаратором та виведіть на екран елементи відсортованого масиву.
+ * 1. Відкрийте проект MyShapes. (з завдання 2.10.1). Створіть клас InvalidShapeStringException, який є підкласом Exception,
+ * із конструктором без параметрів, який передає до конструктора суперкласу повідомлення про помилку у рядку-опису фігури.
+ * 3. Перепишіть метод “parseShape(String)” у класі “Shape”, щоб викликати InvalidShapeStringException, якщо рядок, переданий
+ * як аргумент методу, є недійсним.
+ * Приклад правильного рядка:
+ * "Прямокутник:ЧЕРВОНИЙ:10,20";
+ * Приклад недійсних рядків:
+ * "ПрямокутникЧЕРВОНИЙ12”";
+ * "sdzgdzhgd";
+ * 4. Додайте код до методу main() у класі Main, який створює один прямокутник, один трикутник і одне коло за допомогою
+ * методу Shape.parseShape(String) і обробляє (за допомогою try-catch) виключення, якщо вони виникають (з виведенням
+ * повідомлення про помилку на консоль).
  * <p>
  * * @version 1.1
  * * @autor Olha Nozdriukhina
@@ -92,21 +99,25 @@ public class Main {
 
         String rectangleString = "Прямокутник:ЖОВТИЙ: 5.8,7";
         String triangleString = "Трикутник:СИНІЙ: 6,8,10";
-        String circleString = "Коло:ЧЕРВОНЕ: 4.2";
+        String circleString = "Коло:ЧЕРВОНЕ: ";
 
-        Shape parsedRectangle = Shape.parseShape(rectangleString);
-        Shape parsedTriangle = Shape.parseShape(triangleString);
-        Shape parsedCircle = Shape.parseShape(circleString);
+        try {
+            Shape parsedRectangle = Shape.parseShape(rectangleString);
+            Shape parsedTriangle = Shape.parseShape(triangleString);
+            Shape parsedCircle = Shape.parseShape(circleString);
 
-        System.out.println("Parsed Rectangle: ");
-        parsedRectangle.draw();
-        System.out.println();
+            System.out.println("Parsed Rectangle: ");
+            parsedRectangle.draw();
+            System.out.println();
 
-        System.out.println("Parsed Triangle: ");
-        parsedTriangle.draw();
-        System.out.println();
+            System.out.println("Parsed Triangle: ");
+            parsedTriangle.draw();
+            System.out.println();
 
-        System.out.println("Parsed Circle: ");
-        parsedCircle.draw();
+            System.out.println("Parsed Circle: ");
+            parsedCircle.draw();
+        } catch (InvalidShapeStringException e) {
+            System.out.println("Error while parsing shape: " + e.getMessage());
+        }
     }
 }
